@@ -1,23 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:tryplore_shop/common/common.dart';
 
-class CustomElevatedButton extends StatelessWidget {
-  final IconData? icons;
+import '../../constant/app_colors.dart';
+import '../../constant/app_textstyle.dart';
+class CustomBtn extends StatelessWidget {
   final String txtLabel;
   final Color? txtColor;
   final Color? btnColor;
-  final Color? iconColor;
   final Function()? onPressed;
 
-  CustomElevatedButton(
-      {Key? key,
-      this.icons,
-      this.txtLabel = 'Button Title',
-      this.txtColor,
-      this.btnColor,
-      this.iconColor,
-      this.onPressed})
-      : super(key: key);
+  const CustomBtn({Key? key,
+    this.txtLabel = 'Button Title',
+    this.txtColor,
+    this.btnColor,
+    this.onPressed
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +23,7 @@ class CustomElevatedButton extends StatelessWidget {
         },
         style: ElevatedButton.styleFrom(
           shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
           primary: btnColor,
         ),
         child: SizedBox(
@@ -35,20 +31,11 @@ class CustomElevatedButton extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                icons,
-                size: 27,
-                color: iconColor,
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Center(
-                  child: Text(
+              Text(
                 txtLabel,
                 style: AppTextStyle.subTitle2M(txtColor: AppColors.greyDarkest),
                 textAlign: TextAlign.center,
-              ))
+              )
             ],
           ),
         ));

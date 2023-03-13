@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tryplore_shop/homepage.dart';
-import 'package:tryplore_shop/pages/onboarding_page/first_page.dart';
-import 'package:tryplore_shop/pages/pages.dart';
+import 'package:tryplore_shop/pages/home_page/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: const OnboardingPage()
+      home: HomePage()
     );
   }
 }
