@@ -22,8 +22,7 @@ class CustomBtn extends StatelessWidget {
           onPressed!();
         },
         style: ElevatedButton.styleFrom(
-          shape:
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
           primary: btnColor,
         ),
         child: SizedBox(
@@ -33,7 +32,7 @@ class CustomBtn extends StatelessWidget {
             children: [
               Text(
                 txtLabel,
-                style: AppTextStyle.subTitle2M(txtColor: AppColors.greyDarkest),
+                style: AppTextStyle.subTitle2M(txtColor: txtColor!),
                 textAlign: TextAlign.center,
               )
             ],

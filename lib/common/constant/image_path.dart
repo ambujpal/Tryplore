@@ -14,6 +14,8 @@ static const String rootImagePath = 'assets/images';
 
 
   static const String imgSkirts = '$rootIconPath/skirts.jpg';
+  static const String imgKids = '$rootIconPath/kids2 1.png';
+  static const String imgAccessories = '$rootIconPath/accessories.jpg';
   static const String imgMan = '$rootIconPath/manbeard-is.jpg';
 
   static const String imgTrialRoom = '$rootIconPath/trial_room.png';

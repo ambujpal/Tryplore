@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:tryplore_shop/pages/home_page/home_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tryplore_shop/utils/routes.dart';
+import 'package:tryplore_shop/utils/routes_name.dart';
 
-void main() {
-  runApp(const MyApp());
+
+int? initScreen;
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  initScreen = prefs.getInt('OnboardingPage');
+  await prefs.setInt('initScreen', 1);
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -17,7 +25,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: HomePage()
+      initialRoute: RouteName.splashScreen,
+      onGenerateRoute: Routes.generateRoute,
     );
   }
 }

@@ -2,12 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tryplore_shop/common/common.dart';
 import 'package:tryplore_shop/pages/onboarding_page/controllers/onboarding_controller.dart';
+
+import '../../home_page/main_page.dart';
 class OnboardingPage extends StatelessWidget {
    OnboardingPage({Key? key}) : super(key: key);
   final controller = OnboardingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(child:Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context)=> MainPage()));
+        },
+        child: Text("Next"),
+      ),
       body: PageView.builder(
         controller: controller.pageController,
         onPageChanged: controller.selectedPageIndex,
