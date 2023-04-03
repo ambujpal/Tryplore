@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 
-import '../../constant/app_colors.dart';
+// import '../../constant/app_colors.dart';
 import '../../constant/app_textstyle.dart';
+
 class CustomBtn extends StatelessWidget {
   final String txtLabel;
   final Color? txtColor;
   final Color? btnColor;
   final Function()? onPressed;
 
-  const CustomBtn({Key? key,
-    this.txtLabel = 'Button Title',
-    this.txtColor,
-    this.btnColor,
-    this.onPressed
-  }) : super(key: key);
+  const CustomBtn(
+      {Key? key,
+      this.txtLabel = 'Button Title',
+      this.txtColor,
+      this.btnColor,
+      this.onPressed})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,8 @@ class CustomBtn extends StatelessWidget {
           onPressed!();
         },
         style: ElevatedButton.styleFrom(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
           primary: btnColor,
         ),
         child: SizedBox(
